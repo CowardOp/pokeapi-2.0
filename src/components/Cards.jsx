@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { CardInfo } from "./CardInfo";
 import { Botones } from "./Botones";
+import "../css/card.css";
 
 const Cards = () => {
   const [pokemonId, setPokemonId] = useState(1);
@@ -78,27 +79,33 @@ const Cards = () => {
   };
 
   return (
-    <div className="flex items-center justify-center gap-3 w-full h-screen py-10 bg-[#C3FF93] ">
+    <div className="flex  justify-center gap-3 w-full h-screen py-10 bg-[#C3FF93] overflow-hidden">
       <div className="flex gap-5">
         <Botones
+          clase={
+            "fixed h-3/4 cursor-pointer bg-blue-300 py-2 px-3.5 rounded text-2xl left-0 top-[15%]"
+          }
           icon={<i className="fa-solid fa-arrow-left"></i>}
           handleClick={prevId}
         />
       </div>
-      <div className="flex flex-wrap overflow-y-auto gap-5 items-center justify-center">
+      <div className="w-full flex flex-wrap overflow-y-auto gap-10 items-center justify-center overflow-y-auto">
         {pokemonEvol.map((pokemon) => (
           <CardInfo
             key={pokemon.id}
             pokedex={pokemon.id}
-            name={pokemon.name}
             img={pokemon.img}
             abilities={pokemon.abil}
             types={pokemon.types}
+            pokeName={pokemon.name}
           />
         ))}
       </div>
       <div className="flex gap-5">
         <Botones
+          clase={
+            "fixed h-3/4 cursor-pointer bg-blue-300 py-2 px-3.5 rounded text-2xl right-0 top-[15%]"
+          }
           icon={<i className="fa-solid fa-arrow-right"></i>}
           handleClick={nextId}
         />

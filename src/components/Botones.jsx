@@ -1,10 +1,7 @@
-let Botones = ({ icon, handleClick }) => {
+let Botones = ({ icon, handleClick, clase }) => {
   return (
     <div className="flex justify-center">
-      <button
-        onClick={handleClick}
-        className="cursor-pointer bg-blue-300 py-2 px-3.5 rounded text-2xl"
-      >
+      <button onClick={handleClick} className={clase}>
         {icon}
       </button>
     </div>
