@@ -1,3 +1,15 @@
 *::-webkit-scrollbar {
   width: 0;
 }
+
+.boton {
+  font-family: "Lilita One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.75);
+}
+
+.boton:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+}
