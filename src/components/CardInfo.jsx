@@ -1,12 +1,15 @@
+import "../css/cardinfo.css";
+
 let CardInfo = ({ name, img }) => {
   return (
-    <>
-      <div className="flex flex-col items-center justify-center bg-red-500 w-[200px] h-[300px]">
-        <div className="absolute w-[50px] h-[50px] bg-blue-400 rounded-[50%]"></div>
-        <p className="">{name}</p>
-        <img className="z-10" src={img} alt="pokemon-img" />
+    <div className="card-cont flex flex-col gap-3 bh-black justify-center items-center">
+      <div className="card">
+        <img className="w-full z-[999] " src={img} alt="pokemon-img" />
       </div>
-    </>
+      <div className="p-2 rounded bg-[#4CCD99]">
+        <p className="">{name}</p>
+      </div>
+    </div>
   );
 };
 

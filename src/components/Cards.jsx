@@ -63,7 +63,7 @@ const Cards = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-3 w-full h-screen">
+    <div className="flex flex-col items-center justify-center gap-3 w-full h-screen py-10 bg-[#C3FF93] ">
       <div className="flex gap-5">
         <button
           onClick={() => setPokemonId((prevId) => Math.max(prevId - 1, 1))} // Evita que el ID sea menor que 1
@@ -78,13 +78,10 @@ const Cards = () => {
           <i className="fa-solid fa-arrow-right"></i>
         </button>
       </div>
-      <div className="flex gap-5">
-        {/* <h1 className="text-3xl">{pokemonId}</h1> */}
-        <div className="flex gap-5">
-          {pokemonEvol.map((pokemon) => (
-            <CardInfo key={pokemon[0]} name={pokemon[0]} img={pokemon[1]} />
-          ))}
-        </div>
+      <div className="flex flex-wrap overflow-y-auto gap-5 items-center justify-center">
+        {pokemonEvol.map((pokemon) => (
+          <CardInfo key={pokemon[0]} name={pokemon[0]} img={pokemon[1]} />
+        ))}
       </div>
     </div>
   );
